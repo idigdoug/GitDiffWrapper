@@ -616,6 +616,7 @@ namespace GitDiffWrapper
                 {
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
+                    RedirectStandardInput = true,
                     StandardOutputEncoding = Encoding.UTF8,
                     UseShellExecute = false,
                 };
@@ -682,6 +683,7 @@ namespace GitDiffWrapper
 
                 }
 
+                gitDiff.StandardInput.Close();
                 gitDiff.WaitForExit();
                 if (gitDiff.ExitCode == 0)
                 {
